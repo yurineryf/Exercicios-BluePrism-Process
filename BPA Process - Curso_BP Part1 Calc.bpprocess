@@ -1,0 +1,64 @@
+﻿<process name="Curso_BP Part1 Calc" version="1.0" bpversion="7.1.2.3518" narrative="Curso de BP - Calc" byrefcollection="true" preferredid="e61cd6f6-38ee-41cb-8a4e-bde60f4b3b26">
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="6912624f-c6a4-47d2-8cc4-281b7aea307d" name="Start" type="Start">
+    <display x="15" y="-105" />
+    <onsuccess>a5f6d1c5-8ba1-4536-885e-d51e89686fad</onsuccess>
+  </stage>
+  <stage stageid="ffc5fc40-8855-442f-9947-1c95575320e2" name="End" type="End">
+    <display x="15" y="60" />
+  </stage>
+  <stage stageid="2c51ca3e-d7c9-4f17-b150-1026db767234" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a5f6d1c5-8ba1-4536-885e-d51e89686fad" name="Realizar soma entre dois números" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" w="90" h="30" />
+    <onsuccess>c6a7b4b1-cafb-4661-968e-87f5f3d53706</onsuccess>
+    <calculation expression="6-2" stage="Resultado" />
+  </stage>
+  <stage stageid="73b8f33c-c179-4053-95f4-b59e8098def8" name="Resultado" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="-30" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c6a7b4b1-cafb-4661-968e-87f5f3d53706" name="Varios Calculos" type="MultipleCalculation">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <onsuccess>ffc5fc40-8855-442f-9947-1c95575320e2</onsuccess>
+    <steps>
+      <calculation expression="4+4" stage="Result Soma" />
+      <calculation expression="10*6" stage="Result Mult" />
+      <calculation expression="10/5" stage="Result Div" />
+    </steps>
+  </stage>
+  <stage stageid="16880102-eda3-4670-b8a2-7f44d326fef6" name="Result Soma" type="Data">
+    <display x="-210" y="75" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="92cf9fd8-c071-4a24-9dba-a116a535f35b" name="Result Mult" type="Data">
+    <display x="-210" y="30" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9ef905c7-2ec3-4b17-9d4e-1cbc85a3afd1" name="Result Div" type="Data">
+    <display x="-210" y="120" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
