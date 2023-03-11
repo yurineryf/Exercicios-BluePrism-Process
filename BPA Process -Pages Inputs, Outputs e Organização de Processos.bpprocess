@@ -1,0 +1,141 @@
+﻿<process name="Processo_BP" version="1.0" bpversion="7.1.2.3518" narrative="Primeiro Curso de BP" byrefcollection="true" preferredid="7acaa79c-5c17-4703-8fb5-35149574d217">
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="a89f293d-210f-4702-9974-29de1d8c474a" type="Normal" published="False">
+    <name>Calculo de Maioridade</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>21</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="6912624f-c6a4-47d2-8cc4-281b7aea307d" name="Start" type="Start">
+    <display x="15" y="-105" />
+    <onsuccess>264af34e-b418-41f6-9ce6-5d0afc016705</onsuccess>
+  </stage>
+  <stage stageid="ffc5fc40-8855-442f-9947-1c95575320e2" name="End" type="End">
+    <display x="15" y="135" />
+  </stage>
+  <stage stageid="2c51ca3e-d7c9-4f17-b150-1026db767234" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="cfb514b8-e52e-4575-a9f9-567b4f8f0e58" name="Calculo de Maioridade" type="SubSheetInfo">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <narrative>Realiza a some de dois números e verifica a maioridade</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="450b42f1-3152-4f12-8094-eaa0d0445bb5" name="Start" type="Start">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="15" y="-150" />
+    <inputs>
+      <input type="number" name="Primeiro Número" stage="Primeiro Número" />
+      <input type="number" name="Segundo Número" stage="Segundo Número" />
+    </inputs>
+    <onsuccess>a5f6d1c5-8ba1-4536-885e-d51e89686fad</onsuccess>
+  </stage>
+  <stage stageid="24cd3b85-5e2b-4c48-add0-4a3bb24dfb77" name="End" type="End">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="15" y="135" />
+    <outputs>
+      <output type="text" name="Maioridade Texto " stage="Resultado Maioridade" />
+    </outputs>
+  </stage>
+  <stage stageid="a5f6d1c5-8ba1-4536-885e-d51e89686fad" name="Realizar soma entre dois números" type="Calculation">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-90" w="90" h="30" />
+    <onsuccess>466845d1-2d0a-4b3d-af18-a380cd548514</onsuccess>
+    <calculation expression="[Primeiro Número] + [Segundo Número]" stage="Resultado" />
+  </stage>
+  <stage stageid="466845d1-2d0a-4b3d-af18-a380cd548514" name="É maior ou igual que 18?" type="Decision">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="15" y="-30" w="150" h="30" />
+    <decision expression="[Resultado] &gt;= 18" />
+    <ontrue>6bd04769-bd01-4173-8ca5-113fd0a5ef2b</ontrue>
+    <onfalse>0eb574da-c814-4723-b26b-a2e4960945bc</onfalse>
+  </stage>
+  <stage stageid="0eb574da-c814-4723-b26b-a2e4960945bc" name="Não é maior" type="Calculation">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-30" />
+    <onsuccess>5386e171-9c00-4d3f-9941-02aab7288236</onsuccess>
+    <calculation expression="&quot;Não é maior que 18 anos &quot;" stage="Resultado Maioridade" />
+  </stage>
+  <stage stageid="6bd04769-bd01-4173-8ca5-113fd0a5ef2b" name="É maior" type="Calculation">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="45" />
+    <onsuccess>24cd3b85-5e2b-4c48-add0-4a3bb24dfb77</onsuccess>
+    <calculation expression="&quot;É maior que 18 anos&quot;" stage="Resultado Maioridade" />
+  </stage>
+  <stage stageid="5386e171-9c00-4d3f-9941-02aab7288236" name="Anchor1" type="Anchor">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="135" w="10" h="10" />
+    <onsuccess>24cd3b85-5e2b-4c48-add0-4a3bb24dfb77</onsuccess>
+  </stage>
+  <stage stageid="264af34e-b418-41f6-9ce6-5d0afc016705" name="Calculo de Maioridade" type="SubSheet">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="number" name="Primeiro Número" friendlyname="Primeiro Número" expr="13" />
+      <input type="number" name="Segundo Número" friendlyname="Segundo Número" expr="15" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Maioridade Texto " friendlyname="Maioridade Texto " stage="Maioridade Texto " />
+    </outputs>
+    <onsuccess>ffc5fc40-8855-442f-9947-1c95575320e2</onsuccess>
+    <processid>a89f293d-210f-4702-9974-29de1d8c474a</processid>
+  </stage>
+  <stage stageid="575683b0-a779-49ce-b1a1-1bb0a14b5fc9" name="Primeiro Número" type="Data">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="-210" y="-30" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cd4d6593-651d-4f41-97e3-d7f9db0232c0" name="Segundo Número" type="Data">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="-210" y="15" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fbab5fdb-c33b-4376-98ea-36b6f0c15428" name="Resultado" type="Data">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="-210" y="60" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8398702e-3fb1-47cb-8235-a13b91f81e5e" name="Resultado Maioridade" type="Data">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="-210" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1ae73146-01b5-417f-9fd8-7b9932a4d361" name="Maioridade Texto " type="Data">
+    <subsheetid>a89f293d-210f-4702-9974-29de1d8c474a</subsheetid>
+    <display x="-210" y="150" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="39c27cd4-c1c1-4b11-bf66-30efc4089bbf" name="Maioridade Texto " type="Data">
+    <display x="-210" y="-30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+  </stage>
+</process>
